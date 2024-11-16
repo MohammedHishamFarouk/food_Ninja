@@ -59,7 +59,9 @@ class CartScreen extends StatelessWidget {
               ],
             ),
           ),
-          const BottomSheetWidget(),
+          const BottomSheetWidget(
+            routeName: 'confirmOrderScreen',
+          ),
         ],
       ),
     );

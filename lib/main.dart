@@ -17,15 +17,16 @@ import 'package:food_ninja/view/screens/auth/signupScreen/signup_screen.dart';
 import 'package:food_ninja/view/screens/auth/upload_photo_screen.dart';
 import 'package:food_ninja/view/screens/homePageSections/home_screen.dart';
 import 'package:food_ninja/view/screens/homePageSections/notification_screen.dart';
-import 'package:food_ninja/navigation_bar_screen.dart';
+import 'package:food_ninja/view/screens/navigation_bar_screen.dart';
 import 'package:food_ninja/view/screens/onboarding/onboarding_screen1.dart';
 import 'package:food_ninja/view/screens/onboarding/onboarding_screen2.dart';
 import 'package:food_ninja/view/screens/orderSteps/cart_screen.dart';
+import 'package:food_ninja/view/screens/orderSteps/confirm_order_screen.dart';
 import 'package:food_ninja/view/screens/password_reset/change_pass_screen.dart';
 import 'package:food_ninja/view/screens/password_reset/forgotPasswordScreen/forgot_password_screen.dart';
 import 'package:food_ninja/view/screens/password_reset/reset_success_screen.dart';
 import 'package:food_ninja/view/screens/password_reset/verifyCodeScreen/verify_code_screen.dart';
-import 'package:food_ninja/splash_screen.dart';
+import 'package:food_ninja/view/screens/splash_screen.dart';
 
 void main() {
   runApp(
@@ -73,6 +74,7 @@ class MyApp extends StatelessWidget {
         'navigationBarScreen': (context) => const NavigationBarScreen(),
         'home': (context) => const HomeScreen(),
         'cartScreen': (context) => const CartScreen(),
+        'confirmOrderScreen': (context) => const ConfirmOrderScreen(),
         'notificationScreen': (context) => const NotificationScreen(),
       },
     );

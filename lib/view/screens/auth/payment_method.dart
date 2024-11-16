@@ -3,6 +3,7 @@ import 'package:food_ninja/core/components/background_angled_pattern.dart';
 import 'package:food_ninja/core/components/buttons/custom_back_button.dart';
 import 'package:food_ninja/core/components/buttons/custom_filled_button.dart';
 import 'package:food_ninja/core/components/buttons/green_button_widget.dart';
+import 'package:food_ninja/core/constants/assets.dart';
 
 class PaymentMethod extends StatelessWidget {
   const PaymentMethod({super.key});
@@ -58,7 +59,7 @@ class PaymentMethod extends StatelessWidget {
                 ),
                 Center(
                   child: CustomFilledButton(
-                    image: 'assets/sign_up/paypal-2 (1) 1.png',
+                    image: AssetFolder.paypal,
                     onPressed: () {},
                     imageScale: 0.8,
                   ),

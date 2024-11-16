@@ -8,7 +8,7 @@ import 'package:food_ninja/view/screens/homePageSections/home_screen.dart';
 import 'package:food_ninja/view/screens/infoScreen/profile_screen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'core/constants/assets.dart';
+import '../../core/constants/assets.dart';
 
 class NavigationBarScreen extends StatefulWidget {
   const NavigationBarScreen({super.key});

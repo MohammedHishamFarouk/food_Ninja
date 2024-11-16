@@ -6,7 +6,10 @@ import 'package:food_ninja/modelView/orderCubit/order_cubit.dart';
 class OrderFeesWidget extends StatelessWidget {
   const OrderFeesWidget({
     super.key,
+    required this.routeName,
   });
+
+  final String routeName;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,9 @@ class OrderFeesWidget extends StatelessWidget {
             ),
             const Spacer(),
             FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, routeName);
+              },
               style: FilledButton.styleFrom(
                   backgroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
@@ -58,7 +63,6 @@ class OrderFeesWidget extends StatelessWidget {
 
 class _CustomListTile extends StatelessWidget {
   const _CustomListTile({
-    super.key,
     required this.text,
     required this.price,
     this.fontSize = 14,

@@ -9,6 +9,8 @@ class AssetFolder {
 
   static const String logo = 'assets/Logo.png';
 
+  static const String locationImage = 'assets/sign_up/Pin Logo.png';
+
   static const String searchIcon = 'assets/icons/Icon Search.png';
 
   static const String notificationIcon = 'assets/icons/Icon Notification.png';
@@ -94,4 +96,9 @@ class AssetFolder {
 .wheat
 
 Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt.''';
+
+  static const String defaultLocation =
+      '4517 Washington Ave. Manchester, Kentucky 39495';
+
+  static const paypal = 'assets/sign_up/paypal-2 (1) 1.png';
 }

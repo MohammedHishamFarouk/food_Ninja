@@ -4,7 +4,8 @@ import 'package:food_ninja/core/style/color_manager.dart';
 import 'package:food_ninja/view/screens/orderSteps/components/order_fees_widget.dart';
 
 class BottomSheetWidget extends StatelessWidget {
-  const BottomSheetWidget({super.key});
+  const BottomSheetWidget({super.key, required this.routeName});
+  final String routeName;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,10 @@ class BottomSheetWidget extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: OrderFeesWidget(),
+          padding: const EdgeInsets.all(10.0),
+          child: OrderFeesWidget(
+            routeName: routeName,
+          ),
         ),
       ),
     );
