@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class MessageWidget extends StatelessWidget {
-  const MessageWidget({super.key, required this.message, required this.gradient});
+  const MessageWidget(
+      {super.key, required this.message, required this.gradient});
   final String message;
   final LinearGradient gradient;
 
@@ -13,10 +14,9 @@ class MessageWidget extends StatelessWidget {
         gradient: gradient,
       ),
       constraints: BoxConstraints(
-        minHeight: 40,
-        minWidth: 50,
-        maxWidth: MediaQuery.of(context).size.width-50
-      ),
+          minHeight: 40,
+          minWidth: 50,
+          maxWidth: MediaQuery.sizeOf(context).width - 50),
       padding: const EdgeInsets.all(5),
       child: Align(
         alignment: Alignment.centerLeft,
@@ -25,8 +25,8 @@ class MessageWidget extends StatelessWidget {
         child: Text(
           message,
           style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

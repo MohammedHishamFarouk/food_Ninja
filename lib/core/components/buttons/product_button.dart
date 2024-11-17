@@ -27,7 +27,7 @@ class ProductButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.sizeOf(context).width;
     return Padding(
       padding: const EdgeInsets.only(bottom: 20.0),
       child: FilledButton(

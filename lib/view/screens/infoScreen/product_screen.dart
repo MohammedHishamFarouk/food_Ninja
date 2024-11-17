@@ -31,8 +31,8 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.sizeOf(context).height;
+    final double screenWidth = MediaQuery.sizeOf(context).width;
     return Scaffold(
       body: Stack(
         alignment: Alignment.topCenter,

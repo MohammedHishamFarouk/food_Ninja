@@ -9,18 +9,15 @@ class SignOptionsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FilledButton(
-      onPressed: (){},
+      onPressed: () {},
       style: FilledButton.styleFrom(
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15)
-        )
-      ),
+          padding: EdgeInsets.zero,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
       child: Container(
         height: 65,
-        constraints: BoxConstraints(
-          minWidth: MediaQuery.of(context).size.width/2.5
-        ),
+        constraints:
+            BoxConstraints(minWidth: MediaQuery.sizeOf(context).width / 2.5),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Row(
@@ -29,18 +26,17 @@ class SignOptionsButton extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 10.0),
                 child: Image(
-                  height: MediaQuery.of(context).size.width/14,
-                  width: MediaQuery.of(context).size.width/14,
+                  height: MediaQuery.sizeOf(context).width / 14,
+                  width: MediaQuery.sizeOf(context).width / 14,
                   image: AssetImage(image),
                 ),
               ),
               Text(
                 text,
                 style: const TextStyle(
-                  fontSize: 15,
-                  overflow: TextOverflow.clip,
-                  fontWeight: FontWeight.bold
-                ),
+                    fontSize: 15,
+                    overflow: TextOverflow.clip,
+                    fontWeight: FontWeight.bold),
               )
             ],
           ),

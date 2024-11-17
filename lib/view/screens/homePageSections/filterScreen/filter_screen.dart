@@ -51,7 +51,7 @@ class FilterScreen extends StatelessWidget {
                     children: [
                       SizedBox(
                         height: 60,
-                        width: MediaQuery.of(context).size.width - 50,
+                        width: MediaQuery.sizeOf(context).width - 50,
                         //ToDo color switch
                         child: CustomTextFieldWidget(
                           hintText: ' What do you want to order?',

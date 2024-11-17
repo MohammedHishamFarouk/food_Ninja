@@ -19,7 +19,7 @@ class SetupDoneScreen extends StatelessWidget {
                 const Spacer(flex: 3),
                 Image(
                   image: ExactAssetImage(AssetFolder.doneImage,
-                      scale: MediaQuery.of(context).size.width / 400),
+                      scale: MediaQuery.sizeOf(context).width / 400),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15.0),

@@ -19,7 +19,7 @@ class ReviewBoxWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 20.0),
       child: Container(
         constraints: BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width - 5, minHeight: 100),
+            maxWidth: MediaQuery.sizeOf(context).width - 5, minHeight: 100),
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
@@ -50,7 +50,7 @@ class ReviewBoxWidget extends StatelessWidget {
                     children: [
                       ConstrainedBox(
                         constraints: BoxConstraints(
-                            maxWidth: MediaQuery.of(context).size.width / 1.9),
+                            maxWidth: MediaQuery.sizeOf(context).width / 1.9),
                         child: Text(
                           userName,
                           style: const TextStyle(fontSize: 15),
@@ -63,7 +63,9 @@ class ReviewBoxWidget extends StatelessWidget {
                           fontSize: 14,
                         ),
                       ),
-                      const SizedBox(height: 15,),
+                      const SizedBox(
+                        height: 15,
+                      ),
                     ],
                   ),
                 ),
@@ -91,7 +93,7 @@ class ReviewBoxWidget extends StatelessWidget {
               ],
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 94.0,bottom: 5),
+              padding: EdgeInsets.only(left: 94.0, bottom: 5),
               child: SizedBox(
                 width: 200,
                 child: Text(

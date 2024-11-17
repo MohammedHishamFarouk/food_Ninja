@@ -9,8 +9,8 @@ class BackGroundPatternWidget extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height/2.5,
-          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.sizeOf(context).height / 2.5,
+          width: MediaQuery.sizeOf(context).width,
           child: const Image(
             image: ExactAssetImage(AssetFolder.pattern),
             fit: BoxFit.cover,

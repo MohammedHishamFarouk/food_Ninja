@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       SizedBox(
                         height: 60,
-                        width: MediaQuery.of(context).size.width - 120,
+                        width: MediaQuery.sizeOf(context).width - 120,
                         //ToDo color switch
                         child: CustomTextFieldWidget(
                           hintText: ' What do you want to order?',

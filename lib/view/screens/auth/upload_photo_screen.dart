@@ -102,11 +102,10 @@ class UploadPhotoScreen extends StatelessWidget {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
                                     child: SizedBox(
-                                      width: MediaQuery.of(context).size.width -
+                                      width: MediaQuery.sizeOf(context).width -
                                           130,
-                                      height:
-                                          MediaQuery.of(context).size.width -
-                                              130,
+                                      height: MediaQuery.sizeOf(context).width -
+                                          130,
                                       child: Image.file(
                                         File(context
                                             .read<UserCubit>()
