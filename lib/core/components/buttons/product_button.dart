@@ -12,14 +12,14 @@ class ProductButton extends StatelessWidget {
     required this.image,
     required this.productName,
     required this.hintText,
-    this.notificationLayout = false,
+    this.clickable = true,
     this.price = -20,
     required this.description,
     this.id,
   });
 
   final bool addButtons;
-  final bool notificationLayout;
+  final bool clickable;
   final String image;
   final String productName, hintText, description;
   final double price;
@@ -31,21 +31,24 @@ class ProductButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20.0),
       child: FilledButton(
-        onPressed: () => notificationLayout
-            ? null
-            : Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => ProductScreen(
-                    foodImage: image,
-                    foodName: productName,
-                    description: description,
-                    productHinText: hintText,
-                    price: price,
-                    id: id,
-                  ),
+        onPressed: () {
+          if (clickable) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ProductScreen(
+                  foodImage: image,
+                  foodName: productName,
+                  description: description,
+                  productHinText: hintText,
+                  price: price,
+                  id: id,
                 ),
               ),
+            );
+          }
+        },
         style: FilledButton.styleFrom(
+          splashFactory: clickable ? null : NoSplash.splashFactory,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18),
           ),
@@ -81,9 +84,11 @@ class ProductButton extends StatelessWidget {
                       ),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
-                            maxWidth: screenWidth <= 390 ? 100 : 150),
+                          maxWidth: screenWidth <= 390 ? 100 : 150,
+                        ),
                         child: Text(
                           productName,
+                          maxLines: 2,
                           style: TextStyle(
                             fontSize: screenWidth <= 390 ? 13 : 14,
                           ),
@@ -160,16 +165,16 @@ class ProductButton extends StatelessWidget {
                           ),
                         ],
                       )
-                    : notificationLayout
-                        ? null
-                        : Text(
+                    : clickable
+                        ? Text(
                             r'$' '$price',
                             style: TextStyle(
                               fontSize: screenWidth <= 390 ? 20 : 24,
                               fontWeight: FontWeight.bold,
                               color: ColorManager.yellowTint,
                             ),
-                          ),
+                          )
+                        : null,
               ),
             ],
           ),

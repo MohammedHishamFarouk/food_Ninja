@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeManager.getDarkTheme,
-      initialRoute: 'onboarding1',
+      initialRoute: 'navigationBarScreen',
       routes: {
         'start': (context) => const SplashScreen(),
         'onboarding1': (context) => const OnBoardingScreen1(),

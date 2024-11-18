@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/core/constants/assets.dart';
 
 class OrderButtonWidget extends StatelessWidget {
   const OrderButtonWidget({
     super.key,
-    this.editMode = false,
+    this.editMode = true,
+    this.addHeader = false,
     required this.text,
-    required this.hintTitle,
-    required this.image,
-    required this.imageScale,
+    this.hintTitle = 'Deliver To',
+    this.image = AssetFolder.locationImage,
+    this.imageScale = 0.89,
   });
   final bool editMode;
+  final bool addHeader;
   final String text, hintTitle, image;
   final double imageScale;
 
@@ -36,7 +39,7 @@ class OrderButtonWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            if (editMode)
+            if (addHeader)
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -44,17 +47,18 @@ class OrderButtonWidget extends StatelessWidget {
                     hintTitle,
                     style: TextStyle(color: Colors.grey.shade700),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      textStyle:
-                          const TextStyle(decoration: TextDecoration.none),
-                      padding: EdgeInsets.zero,
-                      alignment: Alignment.centerRight,
-                      overlayColor: Colors.transparent,
+                  if (editMode)
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        textStyle:
+                            const TextStyle(decoration: TextDecoration.none),
+                        padding: EdgeInsets.zero,
+                        alignment: Alignment.centerRight,
+                        overlayColor: Colors.transparent,
+                      ),
+                      child: const Text('Edit'),
                     ),
-                    child: const Text('Edit'),
-                  ),
                 ],
               ),
             Padding(

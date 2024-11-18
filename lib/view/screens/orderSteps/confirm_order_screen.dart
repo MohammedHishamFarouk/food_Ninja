@@ -34,14 +34,11 @@ class ConfirmOrderScreen extends StatelessWidget {
                   ),
                 ),
                 OrderButtonWidget(
-                  editMode: true,
+                  addHeader: true,
                   text: AssetFolder.defaultLocation,
-                  hintTitle: 'Deliver To',
-                  image: AssetFolder.locationImage,
-                  imageScale: 0.95,
                 ),
                 OrderButtonWidget(
-                  editMode: true,
+                  addHeader: true,
                   text: '2121 6352 8465 ****',
                   hintTitle: 'Payment Method',
                   image: AssetFolder.paypal,

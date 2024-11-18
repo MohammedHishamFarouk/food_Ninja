@@ -9,8 +9,8 @@ part 'order_state.dart';
 class OrderCubit extends Cubit<OrderState> {
   OrderCubit() : super(OrderInitial());
 
-  List<double> cartProductsPrices = [];
-  Set<Widget> cartProducts = {
+  final List<double> cartProductsPrices = [];
+  final Set<Widget> cartProducts = {
     const ProductButton(
       image: AssetFolder.soup,
       productName: 'soup',
@@ -20,22 +20,27 @@ class OrderCubit extends Cubit<OrderState> {
       id: 100000,
     )
   };
-  List<int> cartProductsId = [];
-  List<int> cartProductCount = [];
+  final List<int> cartProductsId = [];
+  final List<int> cartProductCount = [];
 
   void addToCart(ProductsModel productsModel) {
-    cartProducts.add(
-      ProductButton(
-        image: productsModel.foodImage.first,
-        productName: productsModel.title,
-        hintText: productsModel.hintText,
-        price: productsModel.price,
-        description: productsModel.description,
-        addButtons: true,
-        notificationLayout: true,
-        id: productsModel.id,
-      ),
-    );
+    if (!cartProductsId.contains(productsModel.id)) {
+      cartProducts.add(
+        ProductButton(
+          image: productsModel.foodImage.first,
+          productName: productsModel.title,
+          hintText: productsModel.hintText,
+          price: productsModel.price,
+          description: productsModel.description,
+          addButtons: true,
+          clickable: false,
+          id: productsModel.id,
+        ),
+      );
+    } else {
+      cartProductsPrices.remove(productsModel.price);
+      cartProductsId.remove(productsModel.id);
+    }
     emit(AddToCartSuccess());
   }
 

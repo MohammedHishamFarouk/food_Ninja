@@ -39,17 +39,16 @@ class CartScreen extends StatelessWidget {
                     return Expanded(
                       child: ListView.builder(
                         itemBuilder: (ctx, idx) {
-                          return ClipRRect(
-                            child: Dismissible(
-                              key: Key(idx.toString()),
-                              background: const Card(
-                                color: Colors.amber,
-                              ),
-                              child: context
-                                  .read<OrderCubit>()
-                                  .cartProducts
-                                  .elementAt(idx),
+                          return Dismissible(
+                            direction: DismissDirection.endToStart,
+                            key: Key(idx.toString()),
+                            background: const Card(
+                              color: Colors.amber,
                             ),
+                            child: context
+                                .read<OrderCubit>()
+                                .cartProducts
+                                .elementAt(idx),
                           );
                         },
                         itemCount:
